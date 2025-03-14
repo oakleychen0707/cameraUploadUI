@@ -1,4 +1,4 @@
-package com.example.ui0314
+package com.example.cameraUploadUI
 
 import io.flutter.embedding.android.FlutterActivity
 

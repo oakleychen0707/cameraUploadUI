@@ -1,6 +1,6 @@
 {
-    "name": "ui0314",
-    "short_name": "ui0314",
+    "name": "cameraUploadUI",
+    "short_name": "cameraUploadUI",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
