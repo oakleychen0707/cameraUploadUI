@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'MenuHelper.dart';
+import 'widget/SearchWidget.dart';
 
 class FilePage extends StatefulWidget {
   const FilePage({super.key});
@@ -30,19 +31,8 @@ class _FilePageState extends State<FilePage> {
               left: 16,
               right: 16,
             ),
-            child: TextField(
-              controller: _searchController,
-              decoration: InputDecoration(
-                labelText: '搜尋',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30.0),  // 設定圓角
-                ),
-                prefixIcon: const Icon(Icons.search),
-              ),
-              onChanged: (query) {
-                // 這裡可以處理搜尋邏輯，根據輸入更新界面
-                print('搜尋內容: $query');
-              },
+            child: SearchWidget(
+              controller: _searchController, // 只需傳遞 controller，邏輯寫在組件內部
             ),
           ),
           const Expanded(

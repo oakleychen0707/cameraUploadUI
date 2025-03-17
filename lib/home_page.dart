@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'MenuHelper.dart';
+import 'widget/SearchWidget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -29,18 +30,8 @@ class _HomePageState extends State<HomePage> {
               left: 16,
               right: 16,
             ),
-            child: TextField(
-              controller: _searchController,
-              decoration: InputDecoration(
-                labelText: '搜尋',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                ),
-                prefixIcon: const Icon(Icons.search),
-              ),
-              onChanged: (query) {
-                print('搜尋內容: $query');
-              },
+            child: SearchWidget(
+              controller: _searchController, // 只需傳遞 controller，邏輯寫在組件內部
             ),
           ),
           const Expanded(
