@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'image_picker_helper.dart';
+import 'MenuHelper.dart';
 
 class PhotoPage extends StatefulWidget {
   const PhotoPage({super.key});
@@ -53,13 +53,10 @@ class _PhotoPageState extends State<PhotoPage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => ImagePickerHelper.pickImage(),  // 調用共用的 pickImage 方法
-        child: const Icon(
-          Icons.add,
-          color: Colors.white,  // 圖標顏色
-        ),
-        backgroundColor: Colors.blue.shade900,  // 按鈕背景顏色
-        shape: CircleBorder(),
+        onPressed: () => MenuHelper.showMenu(context),
+        child: const Icon(Icons.add, color: Colors.white),
+        backgroundColor: Colors.blue.shade900,
+        shape: const CircleBorder(),
       ),
     );
   }

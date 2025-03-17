@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'image_picker_helper.dart';
+import 'MenuHelper.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -9,7 +9,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // 用來存儲搜尋框的文字
   final TextEditingController _searchController = TextEditingController();
 
   @override
@@ -17,8 +16,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Align(
-          alignment: Alignment.centerLeft,  // 將標題設為靠左
-          child: Text('首頁'),  // 設定標題文字
+          alignment: Alignment.centerLeft,
+          child: Text('首頁'),
         ),
       ),
       body: Column(
@@ -35,12 +34,11 @@ class _HomePageState extends State<HomePage> {
               decoration: InputDecoration(
                 labelText: '搜尋',
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30.0),  // 設定圓角
+                  borderRadius: BorderRadius.circular(30.0),
                 ),
                 prefixIcon: const Icon(Icons.search),
               ),
               onChanged: (query) {
-                // 這裡可以處理搜尋邏輯，根據輸入更新界面
                 print('搜尋內容: $query');
               },
             ),
@@ -53,13 +51,10 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => ImagePickerHelper.pickImage(),  // 調用共用的 pickImage 方法
-        child: const Icon(
-          Icons.add,
-          color: Colors.white,  // 圖標顏色
-        ),
-        backgroundColor: Colors.blue.shade900,  // 按鈕背景顏色
-        shape: CircleBorder(),
+        onPressed: () => MenuHelper.showMenu(context),
+        child: const Icon(Icons.add, color: Colors.white),
+        backgroundColor: Colors.blue.shade900,
+        shape: const CircleBorder(),
       ),
     );
   }
