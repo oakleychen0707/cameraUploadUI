@@ -34,10 +34,10 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    HomePage(),  // 移除 const
-    const FilePage(),
-    const PhotoPage(),
-    const AccountPage(),
+    HomePage(),
+    FilePage(),
+    PhotoPage(),
+    AccountPage(),
   ];
 
   void _onItemTapped(int index) {
