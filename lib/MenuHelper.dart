@@ -14,21 +14,23 @@ class MenuHelper {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            Column(
               children: [
-                _buildMenuItem(context, Icons.create_new_folder, '新增資料夾', () {}),
-                _buildMenuItem(context, Icons.insert_drive_file, '其他檔案', () => ImagePickerHelper.pickImage()),
-                _buildMenuItem(context, Icons.camera_alt, '拍照', () => _pickImage(ImageSource.camera)),
-              ],
-            ),
-            const SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                _buildMenuItem(context, Icons.videocam, '錄影', () => _pickVideo(ImageSource.camera)),
-                _buildMenuItem(context, Icons.mic, '錄音', () {}),
-                _buildMenuItem(context, Icons.note_alt, '記事', () {}),
+                Row(
+                  children: [
+                    Expanded(child: _buildMenuItem(context, Icons.create_new_folder, '新增資料夾', () {})),
+                    Expanded(child: _buildMenuItem(context, Icons.insert_drive_file, '其他檔案', () => ImagePickerHelper.pickImage())),
+                    Expanded(child: _buildMenuItem(context, Icons.camera_alt, '拍照', () => _pickImage(ImageSource.camera))),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                Row(
+                  children: [
+                    Expanded(child: _buildMenuItem(context, Icons.videocam, '錄影', () => _pickVideo(ImageSource.camera))),
+                    Expanded(child: _buildMenuItem(context, Icons.mic, '錄音', () {})),
+                    Expanded(child: _buildMenuItem(context, Icons.note_alt, '記事', () {})),
+                  ],
+                ),
               ],
             ),
           ],
