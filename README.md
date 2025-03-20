@@ -1,13 +1,10 @@
 # cameraUploadUI
 
-A new Flutter project.
+一個檔案儲存空間的 UI，功能尚未實作
 
-## Getting Started
+## UI
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p align="center">
+  <img src="filePage.png" width="250" />
+  <img src="Menu.png" width="250" />
+</p>
