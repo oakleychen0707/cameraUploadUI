@@ -53,19 +53,31 @@ class _HomeScreenState extends State<HomeScreen> {
         index: _currentIndex,
         children: _pages,
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: _currentIndex,
-        onTap: _onItemTapped,
-        backgroundColor: Colors.blue.shade900,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.black,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: '首頁'),
-          BottomNavigationBarItem(icon: Icon(Icons.folder), label: '檔案'),
-          BottomNavigationBarItem(icon: Icon(Icons.photo), label: '相片'),
-          BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: '帳戶'),
-        ],
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.2), // 陰影顏色
+              spreadRadius: 0, // 陰影擴散範圍
+              blurRadius: 8, // 陰影模糊程度
+              offset: Offset(0, -1), // 陰影偏移量
+            ),
+          ],
+        ),
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          currentIndex: _currentIndex,
+          onTap: _onItemTapped,
+          backgroundColor: Colors.grey.shade100,
+          selectedItemColor: Colors.blue.shade900,
+          unselectedItemColor: Colors.grey,
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: '首頁'),
+            BottomNavigationBarItem(icon: Icon(Icons.folder), label: '檔案'),
+            BottomNavigationBarItem(icon: Icon(Icons.photo), label: '相片'),
+            BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: '帳戶'),
+          ],
+        ),
       ),
     );
   }

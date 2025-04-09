@@ -12,10 +12,9 @@ class _AccountPageState extends State<AccountPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Align(
-          alignment: Alignment.centerLeft,  // 將標題設為靠左
-          child: Text('帳戶'),  // 設定標題文字
-        ),
+        title: Text("帳戶", style: TextStyle(color: Colors.white)),
+        centerTitle: true,
+        backgroundColor: Colors.blue.shade900,
       ),
       body: const Center(
         child: Text('帳戶內容'),

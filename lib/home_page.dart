@@ -16,23 +16,14 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Align(
-          alignment: Alignment.centerLeft,
-          child: Text('首頁'),
-        ),
+        title: Text("首頁", style: TextStyle(color: Colors.white)),
+        centerTitle: true,
+        backgroundColor: Colors.blue.shade900,
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 8,
-              bottom: 8,
-              left: 16,
-              right: 16,
-            ),
-            child: SearchWidget(
-              controller: _searchController, // 只需傳遞 controller，邏輯寫在組件內部
-            ),
+          SearchWidget(
+            controller: _searchController, // 只需傳遞 controller，邏輯寫在組件內部
           ),
           const Expanded(
             child: Center(
